@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
 import { X } from "lucide-react"
+import { toast } from "sonner"
 
 interface Task {
   id: string
@@ -50,7 +51,11 @@ export default function Home() {
   const copyUrl = () => {
     navigator.clipboard
       .writeText(window.location.href)
-      .then(() => alert("URL copied to clipboard!"))
+      .then(() => {
+        toast.success("URL copied to clipboard!", {
+          duration: 1500,
+        })
+      })
       .catch((err) => console.error("Failed to copy URL: ", err))
   }
 
