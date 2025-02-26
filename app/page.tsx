@@ -60,8 +60,8 @@ export default function Home() {
   }
 
   return (
-    <main className="max-w-md mx-auto mt-10 p-4">
-      <h1 className="text-2xl font-bold mb-4">urlToDo</h1>
+    <main className="max-w-md mx-auto mt-10 p-4 font-sans ">
+      <h1 className="text-2xl font-bold mb-4 tracking-wide italic">urltodo</h1>
       <form onSubmit={addTask} className="mb-4 flex gap-2">
         <Input
           type="text"
