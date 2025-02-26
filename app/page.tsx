@@ -6,7 +6,7 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
-import { X } from "lucide-react"
+import { X, ClipboardCopy } from "lucide-react"
 import { toast } from "sonner"
 
 interface Task {
@@ -61,7 +61,18 @@ export default function Home() {
 
   return (
     <main className="max-w-md mx-auto mt-10 p-4 font-sans ">
-      <h1 className="text-2xl font-bold mb-4 tracking-wide italic">urltodo</h1>
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-2xl font-bold tracking-wide italic">urltodo</h1>
+        <Button 
+          variant="outline" 
+          size="sm" 
+          onClick={copyUrl}
+          className="h-8 px-3 flex items-center gap-1.5 text-gray-700 border-gray-200 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+        >
+          <ClipboardCopy size={16} />
+          <span className="text-sm font-normal">Copy URL</span>
+        </Button>
+      </div>
       <form onSubmit={addTask} className="mb-4 flex gap-2">
         <Input
           type="text"
@@ -85,7 +96,6 @@ export default function Home() {
           </li>
         ))}
       </ul>
-      <Button onClick={copyUrl}>Copy URL</Button>
     </main>
   )
 }
