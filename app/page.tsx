@@ -62,12 +62,11 @@ export default function Home() {
   return (
     <main className="max-w-md mx-auto mt-10 p-4 font-sans ">
       <div className="flex justify-between items-center mb-4">
-        <h1 className="text-2xl font-bold tracking-wide italic">urltodo</h1>
+        <h1 className="text-3xl font-bold tracking-wide italic">urltodo</h1>
         <Button 
           variant="outline" 
-          size="sm" 
           onClick={copyUrl}
-          className="h-8 px-3 flex items-center gap-1.5 text-gray-700 border-gray-200 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+          className="px-3 flex items-center gap-1.5 text-gray-700 border-gray-200 hover:bg-gray-50 hover:text-gray-900 transition-colors"
         >
           <ClipboardCopy size={16} />
           <span className="text-sm font-normal">Copy URL</span>
