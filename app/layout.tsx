@@ -7,7 +7,7 @@ import { Toaster } from "sonner"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "urltodo - the url encoded todo list",
+  title: "urltodo",
   description: "A todo list app that encodes tasks in the URL",
 }
 
