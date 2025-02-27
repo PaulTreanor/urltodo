@@ -65,13 +65,13 @@ export default function Home() {
   }
 
   return (
-    <main className="max-w-md mx-auto mt-10 p-4 font-sans ">
-      <div className="flex justify-between items-center mb-5">
+    <main className="max-w-md mx-auto mt-8 p-4 font-sans ">
+      <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold tracking-wide italic">urltodo</h1>
         <Button 
           variant="outline" 
           onClick={copyCurrentWindowUrl}
-          className="px-3 flex items-center gap-1.5 text-gray-700 border-gray-200 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+          className="px-3 flex items-center gap-1.5 text-neutral-900 border-neutral-500 hover:bg-neutral-100 hover:text-neutral-900 transition-colors"
         >
           <ClipboardCopy size={16} />
           <span className="text-sm font-normal">Copy URL</span>
@@ -95,7 +95,7 @@ export default function Home() {
         {tasks.map((task) => (
           <li key={task.id} className="flex items-center gap-2">
             <Checkbox id={task.id} checked={task.completed} onCheckedChange={() => toggleTask(task.id)} />
-            <label htmlFor={task.id} className={`flex-grow ${task.completed ? "line-through text-gray-500" : ""}`}>
+            <label htmlFor={task.id} className={`flex-grow ${task.completed ? "line-through text-neutral-500" : ""}`}>
               {task.text}
             </label>
             <Button variant="ghost" size="icon" onClick={() => deleteTask(task.id)}>
