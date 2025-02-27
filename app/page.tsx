@@ -7,7 +7,6 @@ import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
 import { X, ClipboardCopy } from "lucide-react"
 
-import TypewriterEditableTitle from "@/components/list-title"
 import { copyCurrentWindowUrl } from "@/lib/windowUtils"
 import { encodeTasks, decodeTasks } from "@/lib/encodingUtils"
 import type { Task } from "@/types/types"
@@ -15,27 +14,19 @@ import type { Task } from "@/types/types"
 export default function Home() {
   const [tasks, setTasks] = useState<Task[]>([])
   const [newTask, setNewTask] = useState("")
-  const [listTitle, setListTitle] = useState("")
 
   useEffect(() => {
     const hash = window.location.hash.slice(1)
     if (hash) {
-      const { tasks: decodedTasks, title } = decodeTasks(hash)
+      const decodedTasks = decodeTasks(hash)
       setTasks(decodedTasks)
-      if (title) {
-        setListTitle(title)
-      }
     }
   }, [])
 
   useEffect(() => {
-    const encodedData = encodeTasks(tasks, listTitle)
-    window.history.replaceState(null, "", `#${encodedData}`)
-  }, [tasks, listTitle])
-
-  const handleTitleChange = (newTitle: string) => {
-    setListTitle(newTitle)
-  }
+    const encodedTasks = encodeTasks(tasks)
+    window.history.replaceState(null, "", `#${encodedTasks}`)
+  }, [tasks])
 
   const addTask = (e: React.FormEvent) => {
     e.preventDefault()
@@ -66,7 +57,7 @@ export default function Home() {
 
   return (
     <main className="max-w-md mx-auto mt-10 p-4 font-sans ">
-      <div className="flex justify-between items-center mb-5">
+      <div className="flex justify-between items-center mb-4">
         <h1 className="text-3xl font-bold tracking-wide italic">urltodo</h1>
         <Button 
           variant="outline" 
@@ -77,10 +68,6 @@ export default function Home() {
           <span className="text-sm font-normal">Copy URL</span>
         </Button>
       </div>
-      <TypewriterEditableTitle 
-        title={listTitle} 
-        onTitleChange={handleTitleChange} 
-      />
       <form onSubmit={addTask} className="mb-4 flex gap-2">
         <Input
           type="text"
