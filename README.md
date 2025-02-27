@@ -7,11 +7,17 @@ The link is the list.
 urltodo is a Next.js SPA app built with ShadCN. 
 
 ## Running locally (not obvious) 
-Local dev servers seem to handle URL routing differently than built React apps. If you try to run UrlTodo with a normal `npm run dev` script the encoded URL fragments will be dropped by the browser (directing to the app with an empty list).
+The local development server (`npm run dev`) runs useEffects twice and I believe this basically breaks the app locally.
 
 Instead you must build the app and serve the `/out` directory over `http-server`. You can do this with the `serve-build` command. 
+
+`npm run dev` is still quite useful for styling and non URL encoding/decoding dependent tasks because it runs faster and has HMR.
 
 ```bash
 npm run serve-build
 # output at http://127.0.0.1:8080
+
+npm run dev
+# output at http://127.0.0.1:3000
 ```
+
