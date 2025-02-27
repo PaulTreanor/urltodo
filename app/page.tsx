@@ -7,13 +7,10 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
 import { X, ClipboardCopy } from "lucide-react"
-import { toast } from "sonner"
 
-interface Task {
-  id: string
-  text: string
-  completed: boolean
-}
+import { copyCurrentWindowUrl } from "@/lib/windowUtils"
+import { encodeTasks, decodeTasks } from "@/lib/encodingUtils"
+import type { Task } from "@/types/types"
 
 export default function Home() {
   const [tasks, setTasks] = useState<Task[]>([])
@@ -48,24 +45,13 @@ export default function Home() {
     setTasks(tasks.filter((task) => task.id !== id))
   }
 
-  const copyUrl = () => {
-    navigator.clipboard
-      .writeText(window.location.href)
-      .then(() => {
-        toast.success("URL copied to clipboard!", {
-          duration: 1500,
-        })
-      })
-      .catch((err) => console.error("Failed to copy URL: ", err))
-  }
-
   return (
     <main className="max-w-md mx-auto mt-10 p-4 font-sans ">
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-3xl font-bold tracking-wide italic">urltodo</h1>
         <Button 
           variant="outline" 
-          onClick={copyUrl}
+          onClick={copyCurrentWindowUrl}
           className="px-3 flex items-center gap-1.5 text-gray-700 border-gray-200 hover:bg-gray-50 hover:text-gray-900 transition-colors"
         >
           <ClipboardCopy size={16} />
@@ -97,17 +83,5 @@ export default function Home() {
       </ul>
     </main>
   )
-}
-
-function encodeTasks(tasks: Task[]): string {
-  return btoa(JSON.stringify(tasks))
-}
-
-function decodeTasks(encoded: string): Task[] {
-  try {
-    return JSON.parse(atob(encoded))
-  } catch {
-    return []
-  }
 }
 
