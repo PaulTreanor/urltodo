@@ -1,5 +1,4 @@
 "use client"
-
 import type React from "react"
 
 import { useState, useEffect } from "react"
@@ -32,13 +31,24 @@ export default function Home() {
   const addTask = (e: React.FormEvent) => {
     e.preventDefault()
     if (newTask.trim()) {
-      setTasks([...tasks, { id: Date.now().toString(), text: newTask.trim(), completed: false }])
+      setTasks([
+        ...tasks,
+        {
+          id: Date.now().toString(),
+          text: newTask.trim(),
+          completed: false
+        }
+      ])
       setNewTask("")
     }
   }
 
   const toggleTask = (id: string) => {
-    setTasks(tasks.map((task) => (task.id === id ? { ...task, completed: !task.completed } : task)))
+    setTasks(tasks.map((task) => (
+      task.id === id
+        ? { ...task, completed: !task.completed }
+        : task
+    )))
   }
 
   const deleteTask = (id: string) => {

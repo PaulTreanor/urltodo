@@ -1,5 +1,6 @@
-interface Task {
-  id: string
+type Task = {
+  // Using Date.now().toString() to create id when task is created
+  id: string 
   text: string
   completed: boolean
 }
