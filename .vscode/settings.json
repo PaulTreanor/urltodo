@@ -1,0 +1,8 @@
+{
+	"editor.insertSpaces": true,
+	"editor.tabSize": 2,
+	"editor.detectIndentation": false,
+	"editor.renderControlCharacters": true,
+	"editor.useTabStops": true,
+	"editor.tabCompletion": "on"
+} 
