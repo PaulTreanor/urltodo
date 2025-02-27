@@ -58,7 +58,7 @@ export default function Home() {
 
   return (
     <main className="max-w-md mx-auto mt-10 p-4 font-sans ">
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex justify-between items-center mb-5">
         <h1 className="text-3xl font-bold tracking-wide italic">urltodo</h1>
         <Button 
           variant="outline" 
