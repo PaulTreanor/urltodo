@@ -11,7 +11,6 @@ const TypewriterEditableTitle = ({
 	onTitleChange, 
 	defaultTitle = 'Untitled List' 
 }: TypewriterEditableTitleProps) => {
-	// State for editing mode
 	const [isEditing, setIsEditing] = useState(false);
 	const [isAnimating, setIsAnimating] = useState(false);
 	const [animatedText, setAnimatedText] = useState('');
@@ -55,14 +54,12 @@ const TypewriterEditableTitle = ({
 		}
 	}, [isEditing]);
 	
-	// Handle click on the title to enable editing
 	const handleTitleClick = () => {
 		if (!isAnimating && !isEditing) {
 			setIsEditing(true);
 		}
 	};
 	
-	// Handle input changes
 	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setLocalTitle(e.target.value);
 	};
