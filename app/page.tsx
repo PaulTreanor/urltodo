@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
 import { X, ClipboardCopy } from "lucide-react"
 
+import TypewriterEditableTitle from "@/components/list-title"
 import { copyCurrentWindowUrl } from "@/lib/windowUtils"
 import { encodeTasks, decodeTasks } from "@/lib/encodingUtils"
 import type { Task } from "@/types/types"
@@ -68,6 +69,7 @@ export default function Home() {
           <span className="text-sm font-normal">Copy URL</span>
         </Button>
       </div>
+      <TypewriterEditableTitle />
       <form onSubmit={addTask} className="mb-4 flex gap-2">
         <Input
           type="text"
