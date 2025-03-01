@@ -102,7 +102,7 @@ export default function Home() {
             />
             <label 
               htmlFor={task.id} 
-              className={`overflow-hidden break-all ${task.completed ? "line-through text-neutral-500" : ""}`}
+              className={`overflow-hidden break-words ${task.completed ? "line-through text-neutral-500" : ""}`}
             >
               {task.text}
             </label>
