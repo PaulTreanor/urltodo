@@ -93,7 +93,7 @@ export default function Home() {
       </form>
       <ul className="space-y-2 mb-4">
         {tasks.map((task) => (
-          <li key={task.id} className="flex items-center gap-2">
+          <li key={task.id} className="grid grid-cols-[auto_1fr_auto] items-center gap-2">
             <Checkbox 
               id={task.id} 
               checked={task.completed} 
@@ -102,7 +102,7 @@ export default function Home() {
             />
             <label 
               htmlFor={task.id} 
-              className={`flex-grow overflow-hidden break-all ${task.completed ? "line-through text-neutral-500" : ""}`}
+              className={`overflow-hidden break-all ${task.completed ? "line-through text-neutral-500" : ""}`}
             >
               {task.text}
             </label>
