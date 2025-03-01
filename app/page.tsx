@@ -93,7 +93,7 @@ export default function Home() {
       </form>
       <ul className="space-y-2 mb-4">
         {tasks.map((task) => (
-          <li key={task.id} className="flex items-start gap-2">
+          <li key={task.id} className="flex items-center gap-2">
             <Checkbox 
               id={task.id} 
               checked={task.completed} 
@@ -102,11 +102,11 @@ export default function Home() {
             />
             <label 
               htmlFor={task.id} 
-              className={`flex-grow overflow-hidden break-all hyphens-auto ${task.completed ? "line-through text-neutral-500" : ""}`}
+              className={`flex-grow overflow-hidden break-all ${task.completed ? "line-through text-neutral-500" : ""}`}
             >
               {task.text}
             </label>
-            <Button variant="ghost" size="icon" onClick={() => deleteTask(task.id)} className="mt-0.5">
+            <Button variant="ghost" size="icon" onClick={() => deleteTask(task.id)}>
               <X className="h-4 w-4" />
             </Button>
           </li>
