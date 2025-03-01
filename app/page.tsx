@@ -93,12 +93,20 @@ export default function Home() {
       </form>
       <ul className="space-y-2 mb-4">
         {tasks.map((task) => (
-          <li key={task.id} className="flex items-center gap-2">
-            <Checkbox id={task.id} checked={task.completed} onCheckedChange={() => toggleTask(task.id)} />
-            <label htmlFor={task.id} className={`flex-grow ${task.completed ? "line-through text-neutral-500" : ""}`}>
+          <li key={task.id} className="flex items-start gap-2">
+            <Checkbox 
+              id={task.id} 
+              checked={task.completed} 
+              onCheckedChange={() => toggleTask(task.id)}
+              className="mt-1" 
+            />
+            <label 
+              htmlFor={task.id} 
+              className={`flex-grow overflow-hidden break-all hyphens-auto ${task.completed ? "line-through text-neutral-500" : ""}`}
+            >
               {task.text}
             </label>
-            <Button variant="ghost" size="icon" onClick={() => deleteTask(task.id)}>
+            <Button variant="ghost" size="icon" onClick={() => deleteTask(task.id)} className="mt-0.5">
               <X className="h-4 w-4" />
             </Button>
           </li>
