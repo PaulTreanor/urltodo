@@ -71,7 +71,7 @@ export default function Home() {
         <Button 
           variant="outline" 
           onClick={copyCurrentWindowUrl}
-          className="px-3 flex items-center gap-1.5 text-neutral-900 border-neutral-500 hover:bg-neutral-100 hover:text-neutral-900 transition-colors"
+          className="px-3 flex items-center gap-1.5 text-stone-800 bg-white border-stone-400 hover:bg-stone-200 hover:text-stone-900 hover:border-stone-500 transition-colors"
         >
           <ClipboardCopy size={16} />
           <span className="text-sm font-normal">Copy URL</span>
@@ -87,7 +87,7 @@ export default function Home() {
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
           placeholder="Add a new task"
-          className="flex-grow"
+          className="flex-grow bg-white"
         />
         <Button type="submit">Add</Button>
       </form>
