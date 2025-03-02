@@ -67,7 +67,7 @@ export default function Home() {
   return (
     <main className="max-w-md mx-auto mt-8 p-4 font-sans ">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold tracking-wide italic">urltodo</h1>
+        <h1 className="text-4xl font-bold tracking-wide italic">urltodo</h1>
         <Button 
           variant="outline" 
           onClick={copyCurrentWindowUrl}
