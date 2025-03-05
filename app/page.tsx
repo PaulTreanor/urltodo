@@ -76,7 +76,7 @@ export default function Home() {
           className="px-3 flex items-center gap-1.5 text-stone-800 bg-white border-stone-400 hover:bg-stone-200 hover:text-stone-900 hover:border-stone-500 transition-colors"
         >
           <Copy width={30} height={30} />
-          <span className="text-md">Copy URL</span>
+          <span className="text-base">Copy URL</span>
         </Button>
       </div>
       <TypewriterEditableTitle 
@@ -91,7 +91,7 @@ export default function Home() {
           placeholder="Add a new task"
           className="flex-grow bg-white focus-visible:ring-[#8FC31F]"
         />
-        <Button type="submit">Add</Button>
+        <Button className="text-base" type="submit">Add</Button>
       </form>
       <ul className="space-y-2 mb-4">
         {tasks.map((task) => (
