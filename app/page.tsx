@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
 import { X, ClipboardCopy } from "lucide-react"
+import { Copy } from "@/components/icons/Copy"
+import { Scribble } from "@/components/icons/Scribble1"
 
 import TypewriterEditableTitle from "@/components/list-title"
 import { copyCurrentWindowUrl } from "@/lib/windowUtils"
@@ -67,14 +69,14 @@ export default function Home() {
   return (
     <main className="max-w-md mx-auto mt-8 p-4 font-sans ">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-4xl font-bold tracking-wide italic">urltodo</h1>
+        <h1 className="text-4xl font-extrabold tracking-wide italic relative z-10">urltodo</h1>
         <Button 
           variant="outline" 
           onClick={copyCurrentWindowUrl}
           className="px-3 flex items-center gap-1.5 text-stone-800 bg-white border-stone-400 hover:bg-stone-200 hover:text-stone-900 hover:border-stone-500 transition-colors"
         >
-          <ClipboardCopy size={16} />
-          <span className="text-sm font-normal">Copy URL</span>
+          <Copy width={30} height={30} />
+          <span className="text-md">Copy URL</span>
         </Button>
       </div>
       <TypewriterEditableTitle 
@@ -87,7 +89,7 @@ export default function Home() {
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
           placeholder="Add a new task"
-          className="flex-grow bg-white"
+          className="flex-grow bg-white focus-visible:ring-[#8FC31F]"
         />
         <Button type="submit">Add</Button>
       </form>

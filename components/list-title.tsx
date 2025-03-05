@@ -102,7 +102,7 @@ const TypewriterEditableTitle = ({
 						onChange={handleInputChange}
 						onBlur={handleSave}
 						onKeyDown={handleKeyDown}
-						className="text-2xl font-bold text-neutral-800 w-full py-1 px-1 border-b-2 border-amber-500 focus:outline-none bg-transparent"
+						className="text-2xl font-bold text-neutral-800 w-full py-1 px-1 border-b-2 border-[#8FC31F] focus:outline-none bg-transparent"
 						placeholder={defaultTitle}
 					/>
 				) : (
