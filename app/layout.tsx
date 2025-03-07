@@ -26,7 +26,7 @@ export default function RootLayout({
           // Or use strategy="beforeInteractive" or "afterInteractive" if needed
         />
       </head>
-      <body className={inter.className}>
+      <body className={inter.className + " bg-[#F5F3EF]"} >
         {children}
         <Toaster />
       </body>

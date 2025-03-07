@@ -67,15 +67,16 @@ export default function Home() {
   }
 
   return (
-    <main className="max-w-md mx-auto mt-8 p-4 font-sans ">
+    <main className="max-w-md mx-auto mt-8 p-4 font-sans">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-4xl font-extrabold tracking-wide italic relative z-10">urltodo</h1>
+        <h1 className="text-4xl text-[#19214F] font-extrabold tracking-wide italic relative z-10">urltodo</h1>
         <Button 
           variant="outline" 
           onClick={copyCurrentWindowUrl}
-          className="px-3 flex items-center gap-1.5 text-stone-800 bg-white border-stone-400 hover:bg-stone-200 hover:text-stone-900 hover:border-stone-500 transition-colors"
+          className="px-3 flex items-center gap-1.5 text-[#19214F] bg-white border-stone-400 hover:bg-stone-200 hover:text-[#19214F] hover:border-stone-500 transition-colors"
         >
           <Copy width={30} height={30} />
+          {/* <ClipboardCopy width={30} height={30} /> */}
           <span className="text-base">Copy URL</span>
         </Button>
       </div>
@@ -89,18 +90,18 @@ export default function Home() {
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
           placeholder="Add a new task"
-          className="flex-grow bg-white focus-visible:ring-[#8FC31F]"
+          className="flex-grow bg-white focus-visible:ring-[#8FC31F] placeholder:text-[#6B7299]"
         />
-        <Button className="text-base" type="submit">Add</Button>
+        <Button className="text-base bg-[#19214F]" type="submit">Add</Button>
       </form>
       <ul className="space-y-2 mb-4">
         {tasks.map((task) => (
-          <li key={task.id} className="grid grid-cols-[auto_1fr_auto] items-center gap-2">
+          <li key={task.id} className="grid grid-cols-[auto_1fr_auto] items-center gap-2 text-[#19214F]">
             <Checkbox 
               id={task.id} 
               checked={task.completed} 
               onCheckedChange={() => toggleTask(task.id)}
-              className="mt-1" 
+              className="mt-1 data-[state=checked]:bg-[#19214F] data-[state=checked]:border-[#19214F] border-[#19214F]" 
             />
             <label 
               htmlFor={task.id} 
