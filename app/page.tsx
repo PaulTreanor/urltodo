@@ -7,8 +7,6 @@ import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
 import { X, ClipboardCopy } from "lucide-react"
 import { Copy } from "@/components/icons/Copy"
-import { Scribble } from "@/components/icons/Scribble1"
-import Head from "next/head"
 import { useRouter } from "next/navigation"
 
 import TypewriterEditableTitle from "@/components/list-title"
@@ -20,7 +18,6 @@ export default function Home() {
   const [tasks, setTasks] = useState<Task[]>([])
   const [newTask, setNewTask] = useState("")
   const [listTitle, setListTitle] = useState("")
-  const router = useRouter()
 
   useEffect(() => {
     const hash = window.location.hash.slice(1)
@@ -99,7 +96,7 @@ export default function Home() {
           placeholder="Add a new task"
           className="flex-grow bg-white focus-visible:ring-[#8FC31F] placeholder:text-[#6B7299]"
         />
-        <Button className="text-base bg-[#19214F]" type="submit">Add</Button>
+        <Button className="text-base bg-[#19214F] hover:bg-[#6B7299]" type="submit">Add</Button>
       </form>
       <ul className="space-y-2 mb-4">
         {tasks.map((task) => (
