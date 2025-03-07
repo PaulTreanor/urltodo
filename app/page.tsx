@@ -8,6 +8,8 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { X, ClipboardCopy } from "lucide-react"
 import { Copy } from "@/components/icons/Copy"
 import { Scribble } from "@/components/icons/Scribble1"
+import Head from "next/head"
+import { useRouter } from "next/navigation"
 
 import TypewriterEditableTitle from "@/components/list-title"
 import { copyCurrentWindowUrl } from "@/lib/windowUtils"
@@ -18,6 +20,7 @@ export default function Home() {
   const [tasks, setTasks] = useState<Task[]>([])
   const [newTask, setNewTask] = useState("")
   const [listTitle, setListTitle] = useState("")
+  const router = useRouter()
 
   useEffect(() => {
     const hash = window.location.hash.slice(1)
@@ -34,6 +37,10 @@ export default function Home() {
     const encodedData = encodeTasks(tasks, listTitle)
     window.history.replaceState(null, "", `#${encodedData}`)
   }, [tasks, listTitle])
+
+  useEffect(() => {
+    document.title = listTitle ? `${listTitle} | urltodo` : "urltodo"
+  }, [listTitle])
 
   const handleTitleChange = (newTitle: string) => {
     setListTitle(newTitle)
