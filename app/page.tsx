@@ -7,12 +7,16 @@ import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
 import { X, ClipboardCopy } from "lucide-react"
 import { Copy } from "@/components/icons/Copy"
+import { Scribble } from "@/components/icons/Scribble1"
 import { useRouter } from "next/navigation"
+import logoSvg from "@/components/icons/logo.svg"
+import Image from "next/image"
 
 import TypewriterEditableTitle from "@/components/list-title"
 import { copyCurrentWindowUrl } from "@/lib/windowUtils"
 import { encodeTasks, decodeTasks } from "@/lib/encodingUtils"
 import type { Task } from "@/types/types"
+import {UrlTodoLogo} from "@/components/icons/UrltodoLogo"
 
 export default function Home() {
   const [tasks, setTasks] = useState<Task[]>([])
@@ -73,7 +77,15 @@ export default function Home() {
   return (
     <main className="max-w-md mx-auto mt-8 p-4 font-sans">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-4xl text-[#19214F] font-extrabold tracking-wide italic relative z-10">urltodo</h1>
+				<div className="relative">
+           <Image 
+             src={logoSvg} 
+             alt="URL Todo Logo" 
+             width={165} 
+             height={44} 
+             className="-ml-3 mt-1"
+           />
+				</div>
         <Button 
           variant="outline" 
           onClick={copyCurrentWindowUrl}
