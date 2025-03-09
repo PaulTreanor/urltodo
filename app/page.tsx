@@ -5,10 +5,8 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
-import { X, ClipboardCopy } from "lucide-react"
+import { X } from "lucide-react"
 import { Copy } from "@/components/icons/Copy"
-import { Scribble } from "@/components/icons/Scribble1"
-import { useRouter } from "next/navigation"
 import logoSvg from "@/components/icons/logo.svg"
 import Image from "next/image"
 
@@ -16,7 +14,6 @@ import TypewriterEditableTitle from "@/components/list-title"
 import { copyCurrentWindowUrl } from "@/lib/windowUtils"
 import { encodeTasks, decodeTasks } from "@/lib/encodingUtils"
 import type { Task } from "@/types/types"
-import {UrlTodoLogo} from "@/components/icons/UrltodoLogo"
 
 export default function Home() {
   const [tasks, setTasks] = useState<Task[]>([])
