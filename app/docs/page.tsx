@@ -19,86 +19,62 @@ export default function DocsPage() {
 				</Link>
 			</div>
 
-			<h1 className="text-3xl font-bold text-[#19214F] mb-6">URL Todo Documentation</h1>
+			<h1 className="text-3xl font-bold text-[#19214F] mb-6">urltodo</h1>
 			
 			<section className="mb-8">
-				<h2 className="text-2xl font-semibold text-[#19214F] mb-4">How It Works</h2>
 				<p className="mb-4 text-[#19214F]">
-					URL Todo stores your tasks directly in the URL hash, making it easy to share and bookmark your todo lists.
-					No server, no database, just a URL that contains all your tasks.
+          urltodo is the easiest way to share a list.
+        </p>
+        
+        <p className="mb-4 text-[#19214F]">
+        Just go to <a href="https://urltodo.com" className="text-blue-500">urltodo.com</a>, create your list, and then copy the url.
 				</p>
 				
-				<h3 className="text-xl font-semibold text-[#19214F] mt-6 mb-3">URL Encoding</h3>
+				<h3 className="text-xl font-semibold text-[#19214F] mt-6 mb-3">The link is the list</h3>
 				<p className="mb-4 text-[#19214F]">
-					Tasks are encoded using base64 and stored in the URL hash. Here's how the encoding works:
+        This is possible because the list items are encoded *in* the url. This gives urltodo lists some interesing properties: 
 				</p>
-				
-				<div className="mb-6">
-					<SyntaxHighlighter language="typescript" style={vs2015} customStyle={{
-						borderRadius: '0.5rem',
-						padding: '1.5rem',
-					}}>
-{`// Encoding tasks to URL
-const encodeTasks = (tasks, title) => {
-  const data = { tasks, title };
-  const jsonString = JSON.stringify(data);
-  return btoa(jsonString);
-};
+				<p className="mb-4 text-[#19214F]">
+        The list items are encoded *in* the URl. 
+        There's no accounts. 
+        There's no servers storing data. 
+        You can bookmark you lists, or embed them in docs or websites <a className="text-blue-500" href="https://www.urltodo.com/#eyJ0YXNrcyI6W3siaWQiOiIxNzQxOTkwNTU2OTgyIiwidGV4dCI6IlRoaXMgaXMgZnVuIiwiY29tcGxldGVkIjp0cnVlfV0sInRpdGxlIjoiSGVsbG8ifQ==">like this</a>.
+        Lists don't get deleted so long as you have the URL, and every change you make is versioned in your browser history. 
+        You can programatically create urltodo todo lists with simple scripts
+				</p>
 
-// Decoding tasks from URL
-const decodeTasks = (encodedData) => {
-  try {
-    const jsonString = atob(encodedData);
-    return JSON.parse(jsonString);
-  } catch (error) {
-    return { tasks: [], title: "" };
-  }
-};`}
-					</SyntaxHighlighter>
-				</div>
-			</section>
-
-			<section className="mb-8">
-				<h2 className="text-2xl font-semibold text-[#19214F] mb-4">Features</h2>
-				
-				<ul className="list-disc pl-6 space-y-2 text-[#19214F]">
-					<li>Create and manage todo lists without an account</li>
-					<li>Share lists via URL</li>
-					<li>Bookmark lists for later</li>
-					<li>Custom list titles</li>
-					<li>Mark tasks as complete</li>
-					<li>Delete tasks</li>
-				</ul>
-			</section>
-
-			<section className="mb-8">
-				<h2 className="text-2xl font-semibold text-[#19214F] mb-4">Usage Examples</h2>
-				
-				<h3 className="text-xl font-semibold text-[#19214F] mt-6 mb-3">Creating a List</h3>
-				<p className="mb-4 text-[#19214F]">
-					Simply add tasks using the input field and click "Add". The URL will automatically update.
+      <p className="mb-4 text-[#19214F]">
+        There is obviously tons of ways to use urltodo but here's some ideas. 
 				</p>
 				
-				<h3 className="text-xl font-semibold text-[#19214F] mt-6 mb-3">Sharing a List</h3>
-				<p className="mb-4 text-[#19214F]">
-					Click the "Copy URL" button and share the link with anyone you want.
+				<ol className="list-disc pl-6 space-y-1 text-[#19214F]">
+					<li>Share shopping lists</li>
+					<li>Plan parties/trips/festivals</li>
+					<li>Checklists (like a morning routine)</li>
+					<li>Generate lists links from other resources (code)</li>
+        </ol>
+        
+				<p className="mb-4 text-[#19214F] mt-6">
+        I like to keep a list I'm working on open in my browser window, even if I turn my phone on and off the state of my list will persist. 
 				</p>
-				
-				<SyntaxHighlighter language="javascript" style={vs2015} customStyle={{
-					borderRadius: '0.5rem',
-					padding: '1.5rem',
-				}}>
-{`// Example of how to programmatically copy the URL
-const copyCurrentWindowUrl = () => {
-  navigator.clipboard.writeText(window.location.href)
-    .then(() => {
-      // Show success message
-    })
-    .catch((err) => {
-      console.error('Failed to copy URL: ', err);
-    });
-};`}
-				</SyntaxHighlighter>
+
+      </section>
+      
+      <section className="mb-8">
+      <h3 className="text-xl font-semibold text-[#19214F] mt-6 mb-3">Limitations </h3>
+      <p className="mb-4 text-[#19214F]">
+      There is an upward limit to the length of lists imposted by Chrome and FireFox's max URL lengths (32,000 and 64,000 characters). In practice these would be very long lists. 
+			</p>
+	
+      </section>
+      
+      <section className="mb-8">
+      <h3 className="text-xl font-semibold text-[#19214F] mt-6 mb-3">Links</h3>
+				<ol className="list-disc pl-6 space-y-1 text-[#19214F]">
+					<li><a href="https://github.com/PaulTreanor/urltodo" className="text-blue-500">GitHub Repo</a></li>
+					<li><a href="https://paultreanor.com" className="text-blue-500">My website</a></li>
+				</ol>
+	
 			</section>
 		</main>
 	)
