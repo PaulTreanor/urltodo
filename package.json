@@ -8,7 +8,8 @@
     "export": "next build",
     "start": "next start",
     "lint": "next lint",
-    "serve-build": "npm run build && cd out && http-server"
+    "serve-build": "npm run build && cd out && http-server",
+    "test": "playwright test"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.2",
@@ -61,6 +62,7 @@
     "vaul": "^0.9.6"
   },
   "devDependencies": {
+    "@playwright/test": "^1.51.0",
     "@types/node": "^22",
     "@types/react": "^18",
     "@types/react-dom": "^18",
