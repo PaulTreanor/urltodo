@@ -34,7 +34,11 @@ export default function RootLayout({
           </div>
           <Footer />
         </div>
-        <Toaster />
+        <Toaster
+          toastOptions={{
+            style: {color: "#19214F"}
+          }}
+        />
       </body>
     </html>
   )
