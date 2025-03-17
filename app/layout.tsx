@@ -22,9 +22,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <Script
-          id="9dd87958-0c31-4f40-80cf-df8b2d036bc2"
+          async
+          defer
+          data-website-id="9dd87958-0c31-4f40-80cf-df8b2d036bc2"
           src="https://cloud.umami.is/script.js"
-          // Or use strategy="beforeInteractive" or "afterInteractive" if needed
         />
       </head>
       <body className={inter.className + " bg-[#F5F3EF]"} >
