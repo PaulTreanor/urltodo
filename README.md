@@ -1,7 +1,24 @@
-# *urltodo*
-A simple todo list that can be shared with others.
+<p align="center">
+	<img src="components/icons/logo.svg" alt="urltodo">
+</p>
 
-The link is the list. 
+<p align="center">
+  A simple todo list that can be shared with others.
+</p>
+
+<p align="center">
+  <a href="https://www.urltodo.com">urltodo.com</a>
+</p>
+
+<p align="center">
+  The link is the list.
+</p>
+
+## Try it out 
+[https://www.urltodo.com](https://www.urltodo.com)
+
+<img src="screenshot.png" height="450px" alt="screenshot">
+
 
 ## Implementation
 urltodo is a Next.js SPA app built with ShadCN. 
@@ -22,7 +39,7 @@ npm run dev
 ```
 
 ## Testing 
-There's a comprehensive testing suite written with Playwright. 
+The tests are written in Playwright.
 ```bash
 npm run test
 ```
