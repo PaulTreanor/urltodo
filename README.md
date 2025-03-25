@@ -21,3 +21,19 @@ npm run dev
 # output at http://127.0.0.1:3000
 ```
 
+## Testing 
+There's a comprehensive testing suite written with Playwright. 
+```bash
+npm run test
+```
+
+## Setting up git hooks 
+The pre-commit test hook is in the `./githooks/pre-commit` file.
+
+### Add the pre-commit hook
+```bash
+cp ./githooks/pre-commit ./.git/hooks/pre-commit
+
+# Make it executable
+chmod +x .git/hooks/pre-commit
+```
