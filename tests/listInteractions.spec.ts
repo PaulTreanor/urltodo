@@ -25,4 +25,12 @@ test.describe('Test list interactions', () => {
     await page.getByRole('checkbox', { name: 'Apples' }).click();
     await expect(page.getByLabel('Apples')).toBeChecked();
   });
+
+  test('- removing a list item', async ({ page }) => {
+    await page.goto(urlListWithTitleAndItems);
+
+    await expect(page.getByText('Oranges')).toBeVisible(); 
+    await page.getByRole('listitem').filter({ hasText: 'Oranges' }).getByRole('button').click();
+    await expect(page.getByText('Oranges')).not.toBeVisible();
+  });
 })
