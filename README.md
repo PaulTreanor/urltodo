@@ -14,9 +14,6 @@
   The link is the list.
 </p>
 
-## Try it out 
-[https://www.urltodo.com](https://www.urltodo.com)
-
 <img src="screenshot.png" height="450px" alt="screenshot">
 
 
