@@ -16,6 +16,12 @@ module.exports = {
         "2xl": "1400px",
       },
     },
+    colors: {
+      'linen': '#f5f3ef',
+      'dark-blue-ink': '#19214f',
+      'dusty-purple': '#6b7299',
+      'spring-moss': '#8FC31F',
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",

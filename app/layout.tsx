@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   description: "A todo list app that encodes tasks in the URL",
 }
 
+const darkBlueInkColour = "#19214f"
+
 export default function RootLayout({
   children,
 }: {
@@ -28,7 +30,7 @@ export default function RootLayout({
           src="https://cloud.umami.is/script.js"
         />
       </head>
-      <body className={inter.className + " bg-[#F5F3EF]"} >
+      <body className={inter.className + " bg-linen"} >
         <div className="min-h-screen flex flex-col">
           <div className="flex-grow">
             {children}
@@ -37,7 +39,7 @@ export default function RootLayout({
         </div>
         <Toaster
           toastOptions={{
-            style: {color: "#19214F"}
+            style: {color: darkBlueInkColour}
           }}
         />
       </body>

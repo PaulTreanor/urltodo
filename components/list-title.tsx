@@ -90,7 +90,7 @@ const TypewriterEditableTitle = ({
 			<div className="w-full max-w-md">
 				{isAnimating ? (
 					// During animation, show the animated text
-					<h1 className="text-2xl font-bold text-[#19214F] border-b-2 border-transparent py-0.5 cursor-default">
+					<h1 className="text-2xl font-bold text-dark-blue-ink border-b-2 border-transparent py-0.5 cursor-default">
 						{animatedText}<span className="animate-pulse">|</span>
 					</h1>
 				) : isEditing ? (
@@ -102,21 +102,21 @@ const TypewriterEditableTitle = ({
 						onChange={handleInputChange}
 						onBlur={handleSave}
 						onKeyDown={handleKeyDown}
-						className="text-2xl font-bold text-[#19214F] w-full py-1 px-1 border-b-2 border-[#8FC31F] focus:outline-none bg-transparent"
+						className="text-2xl font-bold bg-linen text-dark-blue-ink w-full py-1 px-1 border-b-2 border-spring-moss focus:outline-none bg-transparent"
 						placeholder={defaultTitle}
 					/>
 				) : (
 					// After animation and not editing, show the title as text
 					<h1 
 						onClick={handleTitleClick}
-						className="text-2xl font-bold text-[#19214F] border-b-2 border-transparent hover:border-neutral-300 py-1 cursor-pointer transition-all duration-200"
+						className="text-2xl font-bold text-dark-blue-ink border-b-2 border-transparent hover:border-neutral-300 py-1 cursor-pointer transition-all duration-200"
 					>
 						{localTitle}
 					</h1>
 				)}
 				
 				{!isAnimating && !isEditing && !hasBeenEdited && (
-					<p className="text-sm text-[#6B7299]">
+					<p className="text-sm text-dusty-purple">
 						Click the title to edit
 					</p>
 				)}

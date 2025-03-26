@@ -86,7 +86,7 @@ export default function Home() {
         <Button 
           variant="outline" 
           onClick={copyCurrentWindowUrl}
-          className="px-3 flex items-center gap-1.5 text-[#19214F] bg-white border-stone-400 hover:bg-stone-200 hover:text-[#19214F] hover:border-stone-500 transition-colors"
+          className="px-3 flex items-center gap-1.5 text-dark-blue-ink bg-white border-stone-400 hover:bg-stone-200 hover:text-dark-blue-ink hover:border-stone-500 transition-colors"
         >
           <Copy width={30} height={30} />
           {/* <ClipboardCopy width={30} height={30} /> */}
@@ -103,18 +103,18 @@ export default function Home() {
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
           placeholder="Add a new task"
-          className="flex-grow bg-white focus-visible:ring-[#8FC31F] placeholder:text-[#6B7299]"
+          className="flex-grow bg-white focus-visible:ring-spring-moss placeholder:text-dusty-purple"
         />
-        <Button className="text-base bg-[#19214F] hover:bg-[#6B7299]" type="submit">Add</Button>
+        <Button className="text-base bg-dark-blue-ink hover:bg-dusty-purple" type="submit">Add</Button>
       </form>
       <ul className="space-y-2 mb-4">
         {tasks.map((task) => (
-          <li key={task.id} className="grid grid-cols-[auto_1fr_auto] items-center gap-2 text-[#19214F]">
+          <li key={task.id} className="grid grid-cols-[auto_1fr_auto] items-center gap-2 text-dark-blue-ink">
             <Checkbox 
               id={task.id} 
               checked={task.completed} 
               onCheckedChange={() => toggleTask(task.id)}
-              className="mt-1 data-[state=checked]:bg-[#19214F] data-[state=checked]:border-[#19214F] border-[#19214F]" 
+              className="mt-1 data-[state=checked]:bg-dark-blue-ink data-[state=checked]:border-dark-blue-ink border-dark-blue-ink" 
             />
             <label 
               htmlFor={task.id} 
