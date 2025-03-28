@@ -13,7 +13,7 @@ export default function DocsPage() {
 		<main className="max-w-3xl mx-auto mt-8 p-4 font-sans">
 			<div className="mb-6">
 				<Link href="/">
-					<Button variant="ghost" className="flex items-center gap-2 pl-0 hover:bg-transparent">
+					<Button variant="ghost" className="flex items-center gap-2 pl-0 hover:bg-transparent text-dark-blue-ink">
 						<ArrowLeft size={16} />
 						<span>Back to App</span>
 					</Button>

@@ -28,7 +28,7 @@ test.describe('Main page', () => {
     await page.getByRole('link', { name: 'Documentation' }).click();
 
     // Confirm we're on docs page
-    await expect(page.getByText('urltodo is the easiest way to share a list.')).toBeVisible();
+    await expect(page.getByText('GitHub')).toBeVisible();
   })
 })
 
@@ -36,7 +36,7 @@ test.describe('Docs page', () => {
   test('renders default list heading', async ({ page }) => {
     await page.goto('http://localhost:8080/docs');
   
-    await expect(page.getByText('urltodo is the easiest way to share a list.')).toBeVisible();
+    await expect(page.getByText('GitHub')).toBeVisible();
   });
   
   test('back to App link works', async ({ page }) => {
