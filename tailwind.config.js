@@ -21,6 +21,7 @@ module.exports = {
       'dark-blue-ink': '#19214f',
       'dusty-purple': '#6b7299',
       'spring-moss': '#8FC31F',
+      'ghibli-sky': "#00A0E9"
     },
     extend: {
       colors: {

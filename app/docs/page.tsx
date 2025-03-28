@@ -4,6 +4,7 @@ import React from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
+import { Copy } from "@/components/icons/Copy"
 import SyntaxHighlighter from "react-syntax-highlighter"
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs"
 
@@ -19,43 +20,21 @@ export default function DocsPage() {
 				</Link>
 			</div>
 
-			<h1 className="text-3xl font-bold text-dark-blue-ink mb-6">urltodo</h1>
-			
+      <div className="flex items-center gap-4 mb-6">
+	      <Copy width={40} height={40} />
+	      <h1 className="text-3xl font-bold text-dark-blue-ink">urltodo</h1>
+      </div>
 			<section className="mb-8">
 				<p className="mb-4 text-dark-blue-ink">
-          urltodo is the easiest way to share a list.
+        urltodo stores your list entirely in the URL. When you edit the list the URL changes. If you share the URL other people can see the same list. <strong>The link is the list.</strong>
         </p>
         
         <p className="mb-4 text-dark-blue-ink">
-        Just go to <a href="https://urltodo.com" className="text-blue-500">urltodo.com</a>, create your list, and then copy the url.
+        Just go to <a href="https://urltodo.com" className="text-ghibli-sky">urltodo.com</a>, create your list, and then copy the url.
 				</p>
 				
-				<h3 className="text-xl font-semibold text-dark-blue-ink mt-6 mb-3">The link is the list</h3>
 				<p className="mb-4 text-dark-blue-ink">
-        This is possible because the list items are encoded *in* the url. This gives urltodo lists some interesing properties: 
-				</p>
-				<p className="mb-4 text-dark-blue-ink">
-        The list items are encoded *in* the URl. 
-        There's no accounts. 
-        There's no servers storing data. 
-        You can bookmark you lists, or embed them in docs or websites <a className="text-blue-500" href="https://www.urltodo.com/#eyJ0YXNrcyI6W3siaWQiOiIxNzQxOTkwNTU2OTgyIiwidGV4dCI6IlRoaXMgaXMgZnVuIiwiY29tcGxldGVkIjp0cnVlfV0sInRpdGxlIjoiSGVsbG8ifQ==">like this</a>.
-        Lists don't get deleted so long as you have the URL, and every change you make is versioned in your browser history. 
-        You can programatically create urltodo todo lists with simple scripts
-				</p>
-
-      <p className="mb-4 text-dark-blue-ink">
-        There is obviously tons of ways to use urltodo but here's some ideas. 
-				</p>
-				
-				<ol className="list-disc pl-6 space-y-1 text-dark-blue-ink">
-					<li>Share shopping lists</li>
-					<li>Plan parties/trips/festivals</li>
-					<li>Checklists (like a morning routine)</li>
-					<li>Generate lists links from other resources (code)</li>
-        </ol>
-        
-				<p className="mb-4 text-dark-blue-ink mt-6">
-        I like to keep a list I'm working on open in my browser window, even if I turn my phone on and off the state of my list will persist. 
+          There's no accounts and no servers. You can bookmark your lists or embed them in a document <a className="text-ghibli-sky" href="eyJ0YXNrcyI6W3siaWQiOiIxNzQzMTk3NzgxMzk5IiwidGV4dCI6IlNoYXJlIHNob3BwaW5nIGxpc3RzIiwiY29tcGxldGVkIjpmYWxzZX0seyJpZCI6IjE3NDMxOTc3ODQ5NDEiLCJ0ZXh0IjoiUGxhbiBwYXJ0aWVzL3RyaXBzL2Zlc3RpdmFscyIsImNvbXBsZXRlZCI6ZmFsc2V9LHsiaWQiOiIxNzQzMTk3Nzg4MTY0IiwidGV4dCI6IkNoZWNrbGlzdHMgKGxpa2UgYSBtb3JuaW5nIHJvdXRpbmUpIiwiY29tcGxldGVkIjpmYWxzZX0seyJpZCI6IjE3NDMxOTc3OTI5MzkiLCJ0ZXh0IjoiR2VuZXJhdGUgbGlzdHMgbGlua3MgZnJvbSBvdGhlciByZXNvdXJjZXMgKGNvZGUpIiwiY29tcGxldGVkIjpmYWxzZX1dLCJ0aXRsZSI6IldoYXQgdG8gdXNlIHVybHRvZG8gZm9yPyJ9"> like this</a>. Lists never get deleted and every change you make is versioned in your browser history.
 				</p>
 
       </section>
@@ -71,8 +50,8 @@ export default function DocsPage() {
       <section className="mb-8">
       <h3 className="text-xl font-semibold text-dark-blue-ink mt-6 mb-3">Links</h3>
 				<ol className="list-disc pl-6 space-y-1 text-dark-blue-ink">
-					<li><a href="https://github.com/PaulTreanor/urltodo" className="text-blue-500">GitHub Repo</a></li>
-					<li><a href="https://paultreanor.com" className="text-blue-500">My website</a></li>
+					<li><a href="https://github.com/PaulTreanor/urltodo" className="text-ghibli-sky">GitHub Repo</a></li>
+					<li><a href="https://paultreanor.com" className="text-ghibli-sky">My website</a></li>
 				</ol>
 	
 			</section>
