@@ -30,11 +30,11 @@ export default function DocsPage() {
         </p>
         
         <p className="mb-4 text-dark-blue-ink">
-        Just go to <a href="https://urltodo.com" className="text-ghibli-sky">urltodo.com</a>, create your list, and then copy the url.
+        Just go to <Link href="https://urltodo.com" className="text-ghibli-sky">urltodo.com</Link>, create your list, and then copy the url.
 				</p>
 				
 				<p className="mb-4 text-dark-blue-ink">
-          There's no accounts and no servers. You can bookmark your lists or embed them in a document <a className="text-ghibli-sky" href="eyJ0YXNrcyI6W3siaWQiOiIxNzQzMTk3NzgxMzk5IiwidGV4dCI6IlNoYXJlIHNob3BwaW5nIGxpc3RzIiwiY29tcGxldGVkIjpmYWxzZX0seyJpZCI6IjE3NDMxOTc3ODQ5NDEiLCJ0ZXh0IjoiUGxhbiBwYXJ0aWVzL3RyaXBzL2Zlc3RpdmFscyIsImNvbXBsZXRlZCI6ZmFsc2V9LHsiaWQiOiIxNzQzMTk3Nzg4MTY0IiwidGV4dCI6IkNoZWNrbGlzdHMgKGxpa2UgYSBtb3JuaW5nIHJvdXRpbmUpIiwiY29tcGxldGVkIjpmYWxzZX0seyJpZCI6IjE3NDMxOTc3OTI5MzkiLCJ0ZXh0IjoiR2VuZXJhdGUgbGlzdHMgbGlua3MgZnJvbSBvdGhlciByZXNvdXJjZXMgKGNvZGUpIiwiY29tcGxldGVkIjpmYWxzZX1dLCJ0aXRsZSI6IldoYXQgdG8gdXNlIHVybHRvZG8gZm9yPyJ9"> like this</a>. Lists never get deleted and every change you make is versioned in your browser history.
+          There's no accounts and no servers. You can bookmark your lists or embed them in a document <Link className="text-ghibli-sky" href="https://urltodo.com/#eyJ0YXNrcyI6W3siaWQiOiIxNzQzMTk3NzgxMzk5IiwidGV4dCI6IlNoYXJlIHNob3BwaW5nIGxpc3RzIiwiY29tcGxldGVkIjpmYWxzZX0seyJpZCI6IjE3NDMxOTc3ODQ5NDEiLCJ0ZXh0IjoiUGxhbiBwYXJ0aWVzL3RyaXBzL2Zlc3RpdmFscyIsImNvbXBsZXRlZCI6ZmFsc2V9LHsiaWQiOiIxNzQzMTk3Nzg4MTY0IiwidGV4dCI6IkNoZWNrbGlzdHMgKGxpa2UgYSBtb3JuaW5nIHJvdXRpbmUpIiwiY29tcGxldGVkIjpmYWxzZX0seyJpZCI6IjE3NDMxOTc3OTI5MzkiLCJ0ZXh0IjoiR2VuZXJhdGUgbGlzdHMgbGlua3MgZnJvbSBvdGhlciByZXNvdXJjZXMgKGNvZGUpIiwiY29tcGxldGVkIjpmYWxzZX1dLCJ0aXRsZSI6IldoYXQgdG8gdXNlIHVybHRvZG8gZm9yPyJ9"> like this</Link>. Lists never get deleted and every change you make is versioned in your browser history.
 				</p>
 
       </section>
@@ -42,7 +42,7 @@ export default function DocsPage() {
       <section className="mb-8">
       <h3 className="text-xl font-semibold text-dark-blue-ink mt-6 mb-3">Limitations </h3>
       <p className="mb-4 text-dark-blue-ink">
-      There is an upward limit to the length of lists imposted by Chrome and FireFox's max URL lengths (32,000 and 64,000 characters). In practice these would be very long lists. 
+      There is an upward limit to the length of lists imposed by Chrome and FireFox's max URL lengths (32,000 and 64,000 characters). In practice these would be very long lists. 
 			</p>
 	
       </section>
@@ -50,8 +50,8 @@ export default function DocsPage() {
       <section className="mb-8">
       <h3 className="text-xl font-semibold text-dark-blue-ink mt-6 mb-3">Links</h3>
 				<ol className="list-disc pl-6 space-y-1 text-dark-blue-ink">
-					<li><a href="https://github.com/PaulTreanor/urltodo" className="text-ghibli-sky">GitHub Repo</a></li>
-					<li><a href="https://paultreanor.com" className="text-ghibli-sky">My website</a></li>
+					<li><Link href="https://github.com/PaulTreanor/urltodo" className="text-ghibli-sky">GitHub Repo</Link></li>
+					<li><Link href="https://paultreanor.com" className="text-ghibli-sky">My website</Link></li>
 				</ol>
 	
 			</section>
