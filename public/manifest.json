@@ -1,12 +1,12 @@
 {
-	"name": "urltodo",
-	"short_name": "urltodo",
-	"description": "A todo list app that encodes tasks in the URL",
-	"start_url": "/",
-	"display": "standalone",
-	"background_color": "#f5f5dc",
-	"theme_color": "#19214f",
-	"icons": [
+  "name": "urltodo",
+  "short_name": "urltodo",
+  "description": "A todo list app that encodes tasks in the URL",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f5dc",
+  "theme_color": "#19214f",
+  "icons": [
     {
       "src": "/icons/manifest-icon-192.maskable.png",
       "sizes": "192x192",
