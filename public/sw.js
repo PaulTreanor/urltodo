@@ -30,10 +30,27 @@ workbox.routing.registerRoute(
 	})
 );
 
-// Fallback to offline page if network request fails
-workbox.routing.setCatchHandler(async ({ event }) => {
-	if (event.request.destination === 'document') {
-		return workbox.precaching.matchPrecache('/offline.html');
-	}
-	return Response.error();
-});
+// Update your catchHandler to better handle offline navigation
+workbox.routing.registerRoute(
+	({ request }) => request.mode === 'navigate',
+	new workbox.strategies.NetworkFirst({
+		cacheName: 'pages',
+		plugins: [
+			new workbox.cacheableResponse.CacheableResponsePlugin({
+				statuses: [0, 200],
+			}),
+			new workbox.expiration.ExpirationPlugin({
+				maxEntries: 30,
+				maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days
+			}),
+		],
+	})
+);
+
+// Ensure the root page is cached properly (the most important part for hash-based navigation)
+workbox.routing.registerRoute(
+	'/',
+	new workbox.strategies.StaleWhileRevalidate({
+		cacheName: 'pages',
+	})
+);
