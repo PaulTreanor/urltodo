@@ -12,6 +12,7 @@ const nextConfig = {
   output: 'export',
   distDir: 'out',
   basePath: '',
+  assetPrefix: '',
   experimental: {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
