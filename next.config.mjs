@@ -10,6 +10,9 @@ const nextConfig = {
     unoptimized: true,
   },
   output: 'export',
+  distDir: 'out',
+  basePath: '',
+  assetPrefix: '',
   experimental: {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,

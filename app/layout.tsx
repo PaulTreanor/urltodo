@@ -5,6 +5,7 @@ import { Inter } from "next/font/google"
 import { Toaster } from "sonner"
 import Script from "next/script"
 import Footer from "@/components/Footer"
+import ServiceWorkerRegistration from "@/components/serviceWorkerRegistration"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -23,6 +24,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#19214f" />
+        <link rel="apple-touch-icon" href="/icons/manifest-icon-192.maskable.png" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="urltodo" />
         <Script
           async
           defer
@@ -31,6 +38,7 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className + " bg-linen"} >
+        <ServiceWorkerRegistration />
         <div className="min-h-screen flex flex-col">
           <div className="flex-grow">
             {children}
